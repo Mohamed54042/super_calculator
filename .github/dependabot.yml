@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "go"
+    directory: "/" # Répertoire racine du fichier go.mod
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/" # Répertoire racine du Dockerfile
+    schedule:
+      interval: "daily"
