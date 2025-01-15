@@ -1,13 +1,11 @@
 version: 2
 updates:
-  # Configuration pour les dépendances Go
   - package-ecosystem: "go"
-    directory: "/" # Répertoire racine où se trouve le fichier go.mod
+    directory: "/" # Répertoire racine du fichier go.mod
     schedule:
       interval: "daily"
 
-  # Configuration pour les dépendances Docker
   - package-ecosystem: "docker"
-    directory: "/" # Répertoire racine où se trouve le Dockerfile
+    directory: "/" # Répertoire racine du Dockerfile
     schedule:
       interval: "daily"
