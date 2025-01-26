@@ -32,4 +32,14 @@ jobs:
         run: go test ./...
       - name: Run E2E tests
         run: bash e2e.sh
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          payload: |
+            {
+              "text": "Workflow ${{ github.workflow }} for ${{ github.repository }} just completed. Status: ${{ job.status }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
 
