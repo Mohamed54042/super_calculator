@@ -1,4 +1,4 @@
-cfname: Mohamed
+name: Release
 
 on:
   push:
