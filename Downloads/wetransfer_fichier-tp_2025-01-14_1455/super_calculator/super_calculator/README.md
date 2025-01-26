@@ -8,6 +8,19 @@ It supports :
 - multiplication
 - addition
 - subtraction
+# Clonez le projet
+git clone https://github.com/Mohamed54042/SuperCalculator.git
+cd SuperCalculator
+
+# Installez les dépendances
+go mod tidy
+
+# Lancez les tests
+go test ./...
+
+# Build le projet localement
+go build -o supercalculator
+./supercalculator
 
 ## Usage example
 
