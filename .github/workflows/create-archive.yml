@@ -1,0 +1,26 @@
+name: Create Archive
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  create-archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create archive
+        run: |
+          mkdir -p output
+          zip -r output/project-archive-${{ github.ref_name }}.zip . -x "*.git*"
+
+      - name: Upload archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: project-archive-${{ github.ref_name }}
+          path: output/project-archive-${{ github.ref_name }}.zip
