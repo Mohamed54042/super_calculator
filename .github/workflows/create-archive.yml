@@ -20,7 +20,7 @@ jobs:
           zip -r output/project-archive-${{ github.ref_name }}.zip . -x "*.git*"
 
       - name: Upload archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: project-archive-${{ github.ref_name }}
           path: output/project-archive-${{ github.ref_name }}.zip
